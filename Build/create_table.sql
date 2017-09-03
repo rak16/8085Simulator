@@ -1,0 +1,1 @@
+create table ins(instructions varchar(10), op_codes varchar(10), primary key (op_codes));
