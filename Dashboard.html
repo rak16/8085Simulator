@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>8085</title>
-    <link rel="stylesheet" href="Resources/CSS/Dashboard.css">
+    <link rel="stylesheet" href="static/Dashboard.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -13,8 +13,8 @@
   <body>
     <div class="container-fluid">
       <div class="container">
-        <input type="text" name="txtbox1" placeholder="-UPS">
-        <input type="text" name="txtbox1" placeholder="85">
+        <input id="addressTxtBox" type="text" name="txtbox1" placeholder="-UPS">
+        <input id="instructionTxtBox" type="text" name="txtbox1" placeholder="85">
         <br>
         <br>
         <input id="btnC" class="btns" type="button" name="btnC" value="C">
@@ -41,10 +41,10 @@
         <br>
         <input id="btnprev" class="btns" type="button" name="btnprev" value="PREV">
         <input id="btnmem" class="btns" type="button" name="btnmem" value="EXAM MEM">
-        <input id="btn2" class="btns" type="button" name="btn2" value="GO">
+        <input id="btngo" class="btns" type="button" name="btngo" value="GO">
         <br>
         <input id="btnnext" class="btns" type="button" name="btnnext" value="NEXT">
-        <input id="btnreg " class="btns" type="button" name="btnreg" value="EXAM REG">
+        <input id="btnreg" class="btns" type="button" name="btnreg" value="EXAM REG">
         <input id="btnsingle" class="btns" type="button" name="btnsingle" value="SINGLE STEP">
         <br>
         <input id="btnreset" class="btns" type="button" name="btnreset" value="RESET">
@@ -52,5 +52,6 @@
 
       </div>
     </div>
+    <script src="static/Dashboard.js"></script>
   </body>
 </html>
