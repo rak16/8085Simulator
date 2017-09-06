@@ -40,11 +40,8 @@ $(document).ready(function(){
   $('#btnexec').click(function() {
     $.ajax({
       type: 'POST',
-      url: '',
-      data: {
-        instructionArr: instructionArr
-      },
-      datatype: 'json',
+      url: 'execute?ins_arr='+instructionArr,
+      datatype:'json',
       encode: true
     }).done(function() {
       console.log("done");
