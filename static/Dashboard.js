@@ -2,6 +2,8 @@
 // Date: 01/09/2017
 
 $(document).ready(function(){
+
+
   var instructionArr = [];
   $('#addressTxtBox').focus();
   $('#btnnext').click(function(){
@@ -17,7 +19,7 @@ $(document).ready(function(){
     $('#instructionTxtBox').focus();
   })
 
-  $('#btnexec').click(function(){
+  $('#btnreset').click(function(){
     $.ajax({
       type: 'POST',
       url: '',
