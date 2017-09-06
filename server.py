@@ -19,8 +19,10 @@ cherrypy.engine.subscribe('start_thread', connect_mysql)
 class App(object):
 	exposed = True
 
-	# @cherrypy.tools.allow(methods=['POST','GET'])
-	# @cherrypy.expose
+	@cherrypy.tools.allow(methods=['POST','GET'])
+	@cherrypy.expose
+	def execute(self,ins_arr):
+		print ins_arr
     #Function for recieving array through AJAX goes here
 
 	@cherrypy.tools.allow(methods=['GET'])
