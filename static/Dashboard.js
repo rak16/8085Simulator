@@ -20,8 +20,7 @@ $(document).ready(function(){
   $('#btnexec').click(function(){
     $.ajax({
       type: 'POST',
-      url: '',
-      data: {instructionArr:instructionArr},
+      url: 'execute?ins_arr='+instructionArr,
       datatype:'json',
       encode: true
     }).done(function(){
