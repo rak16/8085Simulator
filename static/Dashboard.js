@@ -2,8 +2,6 @@
 // Date: 01/09/2017
 
 $(document).ready(function(){
-
-
   var instructionArr = [];
   $("#addressTxtBox").attr("disabled", "disabled")
   $("#instructionTxtBox").attr("disabled", "disabled")
