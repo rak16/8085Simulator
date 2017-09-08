@@ -1,20 +1,14 @@
 __author__ = 'Adarsh'
 
 import cherrypy
-import MySQLdb
+import MySQLdb.cursors
 import json
 import os
 
+
 mysql_credentials = json.load(open('mysql_credentials.json'))
-
-# For thread safety with MySQLdb (http://tools.cherrypy.org/wiki/Databases)
-def connect_mysql(thread_index = None):
-    # Create a connection and store it in the current thread 
-    cherrypy.thread_data.db = MySQLdb.connect(**mysql_credentials)
-    cherrypy.thread_data.db.autocommit(True)
-
-#Call "connect" for each thread, when it starts
-cherrypy.engine.subscribe('start_thread', connect_mysql)
+conn = MySQLdb.connect(**mysql_credentials)
+cursor = conn.cursor(MySQLdb.cursors.DictCursor)
 
 class App(object):
 	exposed = True
@@ -28,6 +22,10 @@ class App(object):
 	@cherrypy.tools.allow(methods=['GET'])
 	@cherrypy.expose
 	def serve(self):
+		query = 'SELECT * FROM ins'
+		cursor.execute(query)
+		result = cursor.fetchall()
+		return json.dumps(result)
 		return file("dashboard.html")
 
 
