@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="container">
+      <div class="container col-xs-9">
         <input id="addressTxtBox" type="text" name="txtbox1" placeholder="-UPS">
         <input id="instructionTxtBox" type="text" name="txtbox1" placeholder="85">
         <br>
@@ -50,7 +50,13 @@
         <input id="btnexec" class="btns" type="button" name="btnexec" value="EXECUTE">
 
       </div>
-    </div>
+    <div class="dropdown col-xs-3">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu opcodes_dropdown">
+    </ul>
+  </div>
+  </div>
     <script src="static/Dashboard.js"></script>
   </body>
 </html>
