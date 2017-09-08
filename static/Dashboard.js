@@ -8,6 +8,12 @@ $(document).ready(function(){
     url:'op_code'
   }).done(function(res){
     console.log(res);
+    //appending the Dropdown with opcodes and instructions
+    var json = JSON.parse(res);
+    for(var i=0;i<246;i++){
+      $('.opcodes_dropdown').append(' <li id="card'+ i +'" />')
+      $('#card' + i).append("<a>" +  json[i].instructions.replace(/[']+/g, '') + ", " + json[i].op_codes.replace(/[']+/g, '') + "</a>")
+    }
   })
 
   var instructionArr = [];
