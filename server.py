@@ -21,10 +21,6 @@ class App(object):
 	@cherrypy.tools.allow(methods=['GET'])
 	@cherrypy.expose
 	def serve(self):
-		query = 'SELECT * FROM ins'
-		cursor.execute(query)
-		result = cursor.fetchall()
-		return json.dumps(result)
 		return file("dashboard.html")
 
 	@cherrypy.tools.allow(methods=['POST'])
