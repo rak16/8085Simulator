@@ -2,6 +2,14 @@
 // Date: 01/09/2017
 
 $(document).ready(function(){
+  
+  $.ajax({
+    type:'POST',
+    url:'op_code'
+  }).done(function(res){
+    console.log(res);
+  })
+
   var instructionArr = [];
   $("#addressTxtBox").attr("disabled", "disabled")
   $("#instructionTxtBox").attr("disabled", "disabled")

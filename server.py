@@ -13,7 +13,6 @@ cursor = conn.cursor(MySQLdb.cursors.DictCursor)
 class App(object):
 	exposed = True
 
-
 	@cherrypy.tools.allow(methods=['POST','GET'])
 	@cherrypy.expose
 	def execute(self,ins_arr):
@@ -28,6 +27,13 @@ class App(object):
 		return json.dumps(result)
 		return file("dashboard.html")
 
+	@cherrypy.tools.allow(methods=['POST'])
+	@cherrypy.expose
+	def op_code(self):
+		query = 'SELECT * FROM ins'
+		cursor.execute(query)
+		result = cursor.fetchall()
+		return str(json.dumps(result))
 
 if __name__ == '__main__':
 	cherrypy.server.socket_host = "0.0.0.0"
