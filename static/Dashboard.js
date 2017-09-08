@@ -12,7 +12,7 @@ $(document).ready(function(){
     var json = JSON.parse(res);
     for(var i=0;i<246;i++){
       $('.opcodes_dropdown').append(' <li id="card'+ i +'" />')
-      $('#card' + i).append("<a>" + json[i].op_codes.replace(/[']+/g, '') + ", " + json[i].instructions.replace(/[']+/g, '') + "</a>")
+      $('#card' + i).append("<a>" +  json[i].instructions.replace(/[']+/g, '') + ", " + json[i].op_codes.replace(/[']+/g, '') + "</a>")
     }
   })
 

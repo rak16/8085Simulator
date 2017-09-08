@@ -26,7 +26,7 @@ class App(object):
 	@cherrypy.tools.allow(methods=['POST'])
 	@cherrypy.expose
 	def op_code(self):
-		query = 'SELECT * FROM ins'
+		query = 'SELECT * FROM ins ORDER BY instructions'
 		cursor.execute(query)
 		result = cursor.fetchall()
 		return str(json.dumps(result))
