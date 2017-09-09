@@ -16,6 +16,23 @@ $(document).ready(function(){
     }
   })
 
+  $('#opcodesSearch').keyup(function(){
+    $("#list").show(300);
+    var input = $('#opcodesSearch')[0];
+    var filter = input.value.toUpperCase();
+    var ul = $('#list')[0];
+    var li = $('li');
+    for (i = 0; i < 246; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
+    }
+  })
+
+
   var instructionArr = [];
   $("#addressTxtBox").attr("disabled", "disabled")
   $("#instructionTxtBox").attr("disabled", "disabled")
