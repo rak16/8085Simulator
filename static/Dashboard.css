@@ -11,5 +11,5 @@ body{
     height: auto;
     max-height: 500px;
     overflow-x: hidden;
-    position: static !important;
+    position: absolute !important;
 }
