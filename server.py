@@ -21,7 +21,7 @@ class App(object):
 	@cherrypy.tools.allow(methods=['GET'])
 	@cherrypy.expose
 	def serve(self):
-		return file("dashboard.html")
+		return file("Dashboard.html")
 
 	@cherrypy.tools.allow(methods=['POST'])
 	@cherrypy.expose
